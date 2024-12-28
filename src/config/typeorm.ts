@@ -12,10 +12,10 @@ dotenvConfig({ path: '.env' });
 
 const config = {
   type: 'postgres', // Change this according to your DB (e.g., 'mysql')
-  host: 'aws-0-ap-south-1.pooler.supabase.com',
+  host: 'aws-0-ap-southeast-1.pooler.supabase.com',
   port: 5432, // Change according to your DB
-  username: 'postgres.gbkspnwfbhxiwhzzwefg',
-  password: 'fa4byJL4a6GgvCdL',
+  username: 'postgres.bbbzdlyncfcnmzxxaubm',
+  password: 'bcfd4UKJWgFXbBDs',
   database: 'postgres',
   entities:  [User,NewsFeed,Contact,Testimonial,Carousel,Portfolio],
   migrations: ["dist/migrations/*{.ts,.js}"],// Migration path
