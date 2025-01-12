@@ -17,6 +17,9 @@ export class UserService {
   ) {}
 
   findByUsername(username: string): Promise<User> {
+    const user = this.userRepository.findOne({ where: { username } });
+
+    console.log(user,"{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{")
     return this.userRepository.findOneBy({ username });
   }
 
