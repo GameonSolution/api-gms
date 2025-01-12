@@ -25,22 +25,15 @@ async createImage(param: { file: any; folderKey: string }) {
     let contentType = file.mimetype;
 
     // Apply compression only for images
-    if (isImage) {
-      console.log(1)
-      fileBuffer = await sharp(file.buffer)
-        .webp({ quality: 80 }) // Compress and convert to WebP
-        .toBuffer();
-      contentType = 'image/webp'; // Update content type for WebP
-      console.log(2)
-    }
-
-    // const res = await this.s3.upload({
-    //   Bucket: 'landing-page-imgg',
-    //   Key,
-    //   Body: fileBuffer,
-    //   ContentType: contentType,
-    // });
-    // console.log(res)
+    // if (isImage) {
+    //   console.log(1)
+    //   fileBuffer = await sharp(file.buffer)
+    //     .webp({ quality: 80 }) // Compress and convert to WebP
+    //     .toBuffer();
+    //   contentType = 'image/webp'; // Update content type for WebP
+    //   console.log(2)
+    // }
+ 
     const { data, error } = await supabase.storage
     .from('gms-api') // Replace 'images' with your bucket name
     .upload(`public/${Key}`, fileBuffer, {
@@ -57,14 +50,14 @@ async createImage(param: { file: any; folderKey: string }) {
 
   // console.log('File uploaded successfully:', data);
   // return data.path;
-  console.log(data,"[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[")
+  console.log(data,)
 
     return {
       created: true,
       url: `https://bbbzdlyncfcnmzxxaubm.supabase.co/storage/v1/object/${data.fullPath}`,
     };
   } catch (error) {
-    console.log("500",error)
+    console.log("500")
     console.error('File upload error:', JSON.stringify(error));
     return error
 
