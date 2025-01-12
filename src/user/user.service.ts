@@ -16,11 +16,11 @@ export class UserService {
     private currentUser: CurrentUserService,
   ) {}
 
-  findByUsername(username: string): Promise<User> {
-    const user = this.userRepository.findOne({ where: { username } });
-
-    console.log(user,"{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{")
-    return this.userRepository.findOneBy({ username });
+  async findByUsername(username: string): Promise<User> {
+    const user = await this.userRepository.findOne({ where: { username } });
+  
+    console.log(user, "{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{");
+    return user;
   }
 
   create(user: Partial<User>): Promise<User> {
