@@ -6,7 +6,7 @@ import { Resend } from 'resend';
 export class MailService {
   private resend: any;
   constructor() {
-    this.resend = new Resend('re_LvFYgztm_JHWhK3e4d2M37fyq6od75q6Z')
+    this.resend = new Resend('re_EY4D6EaR_xk6FoFc868Ci6YeeAhPZmB2P')
   }
   
 
