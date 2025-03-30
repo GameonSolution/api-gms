@@ -12,6 +12,9 @@ export class Contact {
   email: string;
 
   @Column()
+  location: string;
+
+  @Column()
   phone: string;
 
   @Column('text')

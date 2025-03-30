@@ -10,6 +10,10 @@ export class CreateContactDto {
   email: string;
 
   @IsNotEmpty()
+  @IsString()
+  location: string;
+
+  @IsNotEmpty()
   @Length(10, 15)  // Phone number length validation
   phone: string;
 
